@@ -1,0 +1,13 @@
+build/
+build-ant-lib/
+target/
+logs/
+overlays/
+.project
+.classpath
+.idea/
+*.iml
+.settings
+.logpid
+*.ipr
+*.iws
