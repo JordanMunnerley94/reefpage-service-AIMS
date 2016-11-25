@@ -40,7 +40,8 @@ public class ReefpageDao {
 
     public ReefPageEntity getAll(String id) {
         return new ReefPageEntity(null, null, getFishByDecade(id), getFishByYear(id), getJuvenileCoralByDecade(id),
-                getJuvenileCoralByYear(id), getMantaByDecade(id), getMantaByYear(id), null, getPhoto(id), null);
+                getJuvenileCoralByYear(id), getMantaByDecade(id), getMantaByYear(id), getMantaPathBound(id),
+                getPhoto(id), getReefComment(id));
     }
 
     // Broken databsse
@@ -78,18 +79,17 @@ public class ReefpageDao {
     }
 
     // Needs reefid - search
-//    private List<MantaPathBound> getMantaPathBound(String id) {
-//        return mantaPathBoundRepository.findByFullreefId(id);
-//    }
+    private MantaPathBound getMantaPathBound(String id) {
+        return mantaPathBoundRepository.findOne(id);
+    }
 
     private List<Photo> getPhoto(String id) {
         return photoRepository.findByFullreefId(id);
     }
 
-    // Needs reedif - search
-//    private List<ReefComment> getReefComment(String id) {
-//        return reefCommentRepository.findByFullreefId(id);
-//    }
+    private ReefComment getReefComment(String id) {
+        return reefCommentRepository.findOne(id);
+    }
 
 
 }

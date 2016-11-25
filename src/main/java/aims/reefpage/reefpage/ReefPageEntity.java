@@ -4,13 +4,17 @@ import aims.reefpage.entity.*;
 
 import java.util.List;
 
+import org.springframework.hateoas.ResourceSupport;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by pbowrey on 25/11/2016.
  */
 
-public class ReefPageEntity {
+public class ReefPageEntity extends ResourceSupport {
 
-    private String id;
+//    private String reefId;
 
     private List<BenthicGroupByDecade> bethicGroupByDecade;
     private List<BenthicGroupByYear> benthicGroupByYear;
@@ -20,21 +24,22 @@ public class ReefPageEntity {
     private List<JuvenileCoralByYear> juvenileCoralByYear;
     private List<MantaByDecade> mantaByDecade;
     private List<MantaByYear> mantaByYear;
-    private List<MantaPathBound> mantaPathBound;
+    private MantaPathBound mantaPathBound;
     private List<Photo> photo;
-    private List<ReefComment> reefComment;
+    private ReefComment reefComment;
 
-    public ReefPageEntity(List<BenthicGroupByDecade> bethicGroupByDecade,
-                          List<BenthicGroupByYear> benthicGroupByYear,
-                          List<FishByDecade> fishByDecade,
-                          List<FishByYear> fishByYear,
-                          List<JuvenileCoralByDecade> juvenileCoralByDecade,
-                          List<JuvenileCoralByYear> juvenileCoralByYear,
-                          List<MantaByDecade> mantaByDecade,
-                          List<MantaByYear> mantaByYear,
-                          List<MantaPathBound> mantaPathBound,
-                          List<Photo> photo,
-                          List<ReefComment> reefComment)
+    @JsonCreator
+    public ReefPageEntity(@JsonProperty("bethicGroupByDecade") List<BenthicGroupByDecade> bethicGroupByDecade,
+                          @JsonProperty("benthicGroupByYear") List<BenthicGroupByYear> benthicGroupByYear,
+                          @JsonProperty("fishByDecade") List<FishByDecade> fishByDecade,
+                          @JsonProperty("fishByYear") List<FishByYear> fishByYear,
+                          @JsonProperty("juvenileCoralByDecade") List<JuvenileCoralByDecade> juvenileCoralByDecade,
+                          @JsonProperty("juvenileCoralByYear") List<JuvenileCoralByYear> juvenileCoralByYear,
+                          @JsonProperty("mantaByDecade")List<MantaByDecade> mantaByDecade,
+                          @JsonProperty("mantaByYear")List<MantaByYear> mantaByYear,
+                          @JsonProperty("mantaPathBound")MantaPathBound mantaPathBound,
+                          @JsonProperty("photo")List<Photo> photo,
+                          @JsonProperty("reefComment")ReefComment reefComment)
     {
         this.bethicGroupByDecade = bethicGroupByDecade;
         this.benthicGroupByYear = benthicGroupByYear;
@@ -49,13 +54,13 @@ public class ReefPageEntity {
         this.reefComment = reefComment;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+//    public String getReefId() {
+//        return reefId;
+//    }
+//
+//    public void setReefId(String reefId) {
+//        this.reefId = reefId;
+//    }
 
     public List<BenthicGroupByDecade> getBethicGroupByDecade() {
         return bethicGroupByDecade;
@@ -121,11 +126,11 @@ public class ReefPageEntity {
         this.mantaByYear = mantaByYear;
     }
 
-    public List<MantaPathBound> getMantaPathBound() {
+    public MantaPathBound getMantaPathBound() {
         return mantaPathBound;
     }
 
-    public void setMantaPathBound(List<MantaPathBound> mantaPathBound) {
+    public void setMantaPathBound(MantaPathBound mantaPathBound) {
         this.mantaPathBound = mantaPathBound;
     }
 
@@ -137,11 +142,11 @@ public class ReefPageEntity {
         this.photo = photo;
     }
 
-    public List<ReefComment> getReefComment() {
+    public ReefComment getReefComment() {
         return reefComment;
     }
 
-    public void setReefComment(List<ReefComment> reefComment) {
+    public void setReefComment(ReefComment reefComment) {
         this.reefComment = reefComment;
     }
 
