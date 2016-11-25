@@ -19,7 +19,6 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureMockMvc
 public class PersistenceTests {
     @Autowired
     MantaByYearRepository mantaByYearRepository;

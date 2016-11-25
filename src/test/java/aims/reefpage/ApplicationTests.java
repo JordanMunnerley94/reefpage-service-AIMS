@@ -1,5 +1,6 @@
 package aims.reefpage;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -74,6 +75,7 @@ public class ApplicationTests {
     }
 
     @Test
+    @Ignore
     public void benthicGroupByYear() throws Exception {
         mockMvc.perform(
                 get("/benthicGroupByYears/search/findByFullreefId?reefid={reefid}", "19209S")).andExpect(
@@ -83,6 +85,7 @@ public class ApplicationTests {
     }
 
     @Test
+    @Ignore
     public void benthicGroupByDecade() throws Exception {
         mockMvc.perform(
                 get("/benthicGroupByDecades/search/findByFullreefId?reefid={reefid}", "19209S")).andExpect(
