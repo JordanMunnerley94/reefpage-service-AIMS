@@ -1,6 +1,11 @@
 package aims.reefpage.reefpage;
 
+import aims.reefpage.entity.*;
+import aims.reefpage.repository.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * Created by jmunnerl on 25/11/2016.
@@ -8,7 +13,83 @@ import org.springframework.stereotype.Component;
 @Component
 public class ReefpageDao {
 
-    public String hello() {
-        return "hello";
+//    @Autowired
+//    BenthicGroupByDecadeRepository benthicGroupByDecadeRepository;
+//    @Autowired
+//    BenthicGroupByYearRepository benthicGroupByYearRepository;
+    @Autowired
+    FishByDecadeRepository fishByDecadeRepository;
+    @Autowired
+    FishByYearRepository fishByYearRepository;
+    @Autowired
+    JuvenileCoralByDecadeRepository juvenileCoralByDecadeRepository;
+    @Autowired
+    JuvenileCoralByYearRepository juvenileCoralByYearRepository;
+    @Autowired
+    MantaByYearRepository mantaByYearRepository;
+    @Autowired
+    MantaByDecadeRepository mantaByDecadeRepository;
+    @Autowired
+    MantaPathBoundRepository mantaPathBoundRepository;
+    @Autowired
+    PhotoRepository photoRepository;
+    @Autowired
+    ReefCommentRepository reefCommentRepository;
+
+
+
+    public ReefPageEntity getAll(String id) {
+        return new ReefPageEntity(null, null, getFishByDecade(id), getFishByYear(id), getJuvenileCoralByDecade(id),
+                getJuvenileCoralByYear(id), getMantaByDecade(id), getMantaByYear(id), null, getPhoto(id), null);
     }
+
+    // Broken databsse
+//    private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
+//        return benthicGroupByYearRepository.findByFullreefId(id);
+//    }
+
+    // Broken database
+//    private List<BenthicGroupByDecade> getBenthicGroupByDecade(String id) {
+//        return benthicGroupByDecadeRepository.findByFullreefId(id);
+//    }
+
+    private List<FishByYear> getFishByYear(String id) {
+        return fishByYearRepository.findByFullreefId(id);
+    }
+
+    private List<FishByDecade> getFishByDecade(String id) {
+        return fishByDecadeRepository.findByFullreefId(id);
+    }
+
+    private List<JuvenileCoralByYear> getJuvenileCoralByYear(String id) {
+        return juvenileCoralByYearRepository.findByFullreefId(id);
+    }
+
+    private List<JuvenileCoralByDecade> getJuvenileCoralByDecade(String id) {
+        return juvenileCoralByDecadeRepository.findByFullreefId(id);
+    }
+
+    private List<MantaByYear> getMantaByYear(String id) {
+        return mantaByYearRepository.findByFullreefId(id);
+    }
+
+    private List<MantaByDecade> getMantaByDecade(String id) {
+        return mantaByDecadeRepository.findByFullreefId(id);
+    }
+
+    // Needs reefid - search
+//    private List<MantaPathBound> getMantaPathBound(String id) {
+//        return mantaPathBoundRepository.findByFullreefId(id);
+//    }
+
+    private List<Photo> getPhoto(String id) {
+        return photoRepository.findByFullreefId(id);
+    }
+
+    // Needs reedif - search
+//    private List<ReefComment> getReefComment(String id) {
+//        return reefCommentRepository.findByFullreefId(id);
+//    }
+
+
 }

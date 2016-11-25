@@ -28,7 +28,7 @@ public class PersistenceTests {
     @Test
     public void testMantaReefAll() {
         log.info("Manta All");
-        final MantaByYear mantaByYearEntity = mantaByYearRepository.findAll().get(0);
+        final List<MantaByYear> mantaByYearEntity = mantaByYearRepository.findAll();
 
         log.info(mantaByYearEntity.toString());
 

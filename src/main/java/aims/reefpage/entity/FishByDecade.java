@@ -140,6 +140,22 @@ public class FishByDecade {
     }
 
     @Override
+    public String toString() {
+        return "FishByDecade{" +
+                "decade='" + decade + '\'' +
+                ", fullreefId='" + fullreefId + '\'' +
+                ", reefName='" + reefName + '\'' +
+                ", aSector='" + aSector + '\'' +
+                ", shelf='" + shelf + '\'' +
+                ", minSpecies=" + minSpecies +
+                ", maxSpecies=" + maxSpecies +
+                ", avgSpecies=" + avgSpecies +
+                ", yearsSurveyed=" + yearsSurveyed +
+                ", id='" + id + '\'' +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         int result = decade != null ? decade.hashCode() : 0;
         result = 31 * result + (fullreefId != null ? fullreefId.hashCode() : 0);

@@ -138,4 +138,19 @@ public class FishByYear {
         result = 31 * result + (transects != null ? transects.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "FishByYear{" +
+                "fullreefId='" + fullreefId + '\'' +
+                ", reefName='" + reefName + '\'' +
+                ", aSector='" + aSector + '\'' +
+                ", shelf='" + shelf + '\'' +
+                ", visitNo=" + visitNo +
+                ", reportYear=" + reportYear +
+                ", species=" + species +
+                ", transects=" + transects +
+                ", id='" + id + '\'' +
+                '}';
+    }
 }
