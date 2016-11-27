@@ -20,7 +20,7 @@ public class ReefPageController {
 
     @RequestMapping("/reefpage")
     public HttpEntity<ReefPageEntity> greeting(
-            @RequestParam(value = "reefid", required = false, defaultValue = "11167S")
+            @RequestParam(value = "reefid", required = false, defaultValue = "18032S")
             String id)
     {
         ReefPageEntity result = reefpageDao.getAll(id);

@@ -16,7 +16,7 @@ public class ReefPageEntity extends ResourceSupport {
 
 //    private String reefId;
 
-    private List<BenthicGroupByDecade> bethicGroupByDecade;
+    private List<BenthicGroupByDecade> benthicGroupByDecade;
     private List<BenthicGroupByYear> benthicGroupByYear;
     private List<FishByDecade> fishByDecade;
     private List<FishByYear> fishByYear;
@@ -29,7 +29,7 @@ public class ReefPageEntity extends ResourceSupport {
     private ReefComment reefComment;
 
     @JsonCreator
-    public ReefPageEntity(@JsonProperty("bethicGroupByDecade") List<BenthicGroupByDecade> bethicGroupByDecade,
+    public ReefPageEntity(@JsonProperty("benthicGroupByDecade") List<BenthicGroupByDecade> benthicGroupByDecade,
                           @JsonProperty("benthicGroupByYear") List<BenthicGroupByYear> benthicGroupByYear,
                           @JsonProperty("fishByDecade") List<FishByDecade> fishByDecade,
                           @JsonProperty("fishByYear") List<FishByYear> fishByYear,
@@ -41,7 +41,7 @@ public class ReefPageEntity extends ResourceSupport {
                           @JsonProperty("photo")List<Photo> photo,
                           @JsonProperty("reefComment")ReefComment reefComment)
     {
-        this.bethicGroupByDecade = bethicGroupByDecade;
+        this.benthicGroupByDecade = benthicGroupByDecade;
         this.benthicGroupByYear = benthicGroupByYear;
         this.fishByDecade = fishByDecade;
         this.fishByYear = fishByYear;
@@ -62,12 +62,12 @@ public class ReefPageEntity extends ResourceSupport {
 //        this.reefId = reefId;
 //    }
 
-    public List<BenthicGroupByDecade> getBethicGroupByDecade() {
-        return bethicGroupByDecade;
+    public List<BenthicGroupByDecade> getBenthicGroupByDecade() {
+        return benthicGroupByDecade;
     }
 
-    public void setBethicGroupByDecade(List<BenthicGroupByDecade> bethicGroupByDecade) {
-        this.bethicGroupByDecade = bethicGroupByDecade;
+    public void setBenthicGroupByDecade(List<BenthicGroupByDecade> benthicGroupByDecade) {
+        this.benthicGroupByDecade = benthicGroupByDecade;
     }
 
     public List<BenthicGroupByYear> getBenthicGroupByYear() {
@@ -153,7 +153,7 @@ public class ReefPageEntity extends ResourceSupport {
     @Override
     public String toString() {
         return "ReefPageEntity{" +
-                "\nbethicGroupByDecade=" + bethicGroupByDecade +
+                "\nbenthicGroupByDecade=" + benthicGroupByDecade +
                 ", \nbenthicGroupByYear=" + benthicGroupByYear +
                 ", \nfishByDecade=" + fishByDecade +
                 ", \nfishByYear=" + fishByYear +
