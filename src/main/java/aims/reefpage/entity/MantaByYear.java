@@ -17,6 +17,7 @@ public class MantaByYear {
     private Long meanCots;
     private String mLive;
     private String medianHcRange;
+    private String status;
     private String id;
 
     @Id
@@ -118,6 +119,16 @@ public class MantaByYear {
         this.medianHcRange = medianHcRange;
     }
 
+    @Basic
+    @Column(name = "STATUS")
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -133,6 +144,7 @@ public class MantaByYear {
         if (reportYear != null ? !reportYear.equals(that.reportYear) : that.reportYear != null) return false;
         if (meanCots != null ? !meanCots.equals(that.meanCots) : that.meanCots != null) return false;
         if (mLive != null ? !mLive.equals(that.mLive) : that.mLive != null) return false;
+        if (status != null ? !status.equals(that.status) : that.status != null) return false;
         if (medianHcRange != null ? !medianHcRange.equals(that.medianHcRange) : that.medianHcRange != null)
             return false;
 
@@ -149,6 +161,7 @@ public class MantaByYear {
         result = 31 * result + (reportYear != null ? reportYear.hashCode() : 0);
         result = 31 * result + (meanCots != null ? meanCots.hashCode() : 0);
         result = 31 * result + (mLive != null ? mLive.hashCode() : 0);
+        result = 31 * result + (status != null ? status.hashCode() : 0);
         result = 31 * result + (medianHcRange != null ? medianHcRange.hashCode() : 0);
         return result;
     }
@@ -165,6 +178,7 @@ public class MantaByYear {
                 ", meanCots=" + meanCots +
                 ", mLive='" + mLive + '\'' +
                 ", medianHcRange='" + medianHcRange + '\'' +
+                ", status='" + status + '\'' +
                 ", id='" + id + '\'' +
                 '}';
     }

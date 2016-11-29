@@ -23,6 +23,6 @@ public class ReefpageDaoTest {
 
     @Test
     public void testHello() {
-        log.info(reefpageDao.getAll("14114S").toString());
+        log.info(reefpageDao.getAll("13093A").toString());
     }
 }
