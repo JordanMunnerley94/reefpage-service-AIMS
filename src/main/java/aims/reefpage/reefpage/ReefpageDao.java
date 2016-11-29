@@ -44,12 +44,20 @@ public class ReefpageDao {
                 getPhoto(id), getReefComment(id));
     }
 
+//    private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
+//        return benthicGroupByYearRepository.findByFullreefId(id);
+//    }
+
     private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
-        return benthicGroupByYearRepository.findByFullreefId(id);
+        return benthicGroupByYearRepository.findByFullreefIdAndGroupCode(id, "HC");
     }
 
+//    private List<BenthicGroupByDecade> getBenthicGroupByDecade(String id) {
+//        return benthicGroupByDecadeRepository.findByFullreefId(id);
+//    }
+
     private List<BenthicGroupByDecade> getBenthicGroupByDecade(String id) {
-        return benthicGroupByDecadeRepository.findByFullreefId(id);
+        return benthicGroupByDecadeRepository.findByFullreefIdAndGroupCode(id, "HC");
     }
 
     private List<FishByYear> getFishByYear(String id) {

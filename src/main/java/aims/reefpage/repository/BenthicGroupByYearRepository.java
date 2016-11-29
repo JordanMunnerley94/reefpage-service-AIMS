@@ -11,4 +11,5 @@ import java.util.List;
  */
 public interface BenthicGroupByYearRepository extends JpaRepository<BenthicGroupByYear, String> {
     List<BenthicGroupByYear> findByFullreefId(@Param("reefid") String fullreefId);
+    List<BenthicGroupByYear> findByFullreefIdAndGroupCode(@Param("reefid") String fullreefId, @Param("group") String groupCode);
 }
