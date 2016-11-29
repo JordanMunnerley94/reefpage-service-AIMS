@@ -13,10 +13,10 @@ import java.util.List;
 @Component
 public class ReefpageDao {
 
-//    @Autowired
-//    BenthicGroupByDecadeRepository benthicGroupByDecadeRepository;
-//    @Autowired
-//    BenthicGroupByYearRepository benthicGroupByYearRepository;
+    @Autowired
+    BenthicGroupByDecadeRepository benthicGroupByDecadeRepository;
+    @Autowired
+    BenthicGroupByYearRepository benthicGroupByYearRepository;
     @Autowired
     FishByDecadeRepository fishByDecadeRepository;
     @Autowired
@@ -39,20 +39,18 @@ public class ReefpageDao {
 
 
     public ReefPageEntity getAll(String id) {
-        return new ReefPageEntity(null, null, getFishByDecade(id), getFishByYear(id), getJuvenileCoralByDecade(id),
+        return new ReefPageEntity(getBenthicGroupByDecade(id), getBenthicGroupByYear(id), getFishByDecade(id), getFishByYear(id), getJuvenileCoralByDecade(id),
                 getJuvenileCoralByYear(id), getMantaByDecade(id), getMantaByYear(id), getMantaPathBound(id),
                 getPhoto(id), getReefComment(id));
     }
 
-    // Broken databsse
-//    private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
-//        return benthicGroupByYearRepository.findByFullreefId(id);
-//    }
+    private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
+        return benthicGroupByYearRepository.findByFullreefId(id);
+    }
 
-    // Broken database
-//    private List<BenthicGroupByDecade> getBenthicGroupByDecade(String id) {
-//        return benthicGroupByDecadeRepository.findByFullreefId(id);
-//    }
+    private List<BenthicGroupByDecade> getBenthicGroupByDecade(String id) {
+        return benthicGroupByDecadeRepository.findByFullreefId(id);
+    }
 
     private List<FishByYear> getFishByYear(String id) {
         return fishByYearRepository.findByFullreefId(id);
