@@ -13,9 +13,9 @@ public class MantaByDecade {
     private String reefName;
     private String aSector;
     private String shelf;
-    private Long minCotsPerTow;
-    private Long maxCotsPerTow;
-    private Long avgCotsPerTow;
+    private Double minCotsPerTow;
+    private Double maxCotsPerTow;
+    private Double avgCotsPerTow;
     private Long minMedianHcRange;
     private Long maxMedianHcRange;
     private Long avgMedianHc;
@@ -83,31 +83,31 @@ public class MantaByDecade {
 
     @Basic
     @Column(name = "MIN_COTS_PER_TOW")
-    public Long getMinCotsPerTow() {
+    public Double getMinCotsPerTow() {
         return minCotsPerTow;
     }
 
-    public void setMinCotsPerTow(Long minCotsPerTow) {
+    public void setMinCotsPerTow(Double minCotsPerTow) {
         this.minCotsPerTow = minCotsPerTow;
     }
 
     @Basic
     @Column(name = "MAX_COTS_PER_TOW")
-    public Long getMaxCotsPerTow() {
+    public Double getMaxCotsPerTow() {
         return maxCotsPerTow;
     }
 
-    public void setMaxCotsPerTow(Long maxCotsPerTow) {
+    public void setMaxCotsPerTow(Double maxCotsPerTow) {
         this.maxCotsPerTow = maxCotsPerTow;
     }
 
     @Basic
     @Column(name = "AVG_COTS_PER_TOW")
-    public Long getAvgCotsPerTow() {
+    public Double getAvgCotsPerTow() {
         return avgCotsPerTow;
     }
 
-    public void setAvgCotsPerTow(Long avgCotsPerTow) {
+    public void setAvgCotsPerTow(Double avgCotsPerTow) {
         this.avgCotsPerTow = avgCotsPerTow;
     }
 

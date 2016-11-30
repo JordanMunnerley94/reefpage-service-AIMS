@@ -14,7 +14,7 @@ public class MantaByYear {
     private String shelf;
     private Long visitNo;
     private Long reportYear;
-    private Long meanCots;
+    private Double meanCots;
     private String mLive;
     private String medianHcRange;
     private String status;
@@ -91,11 +91,11 @@ public class MantaByYear {
 
     @Basic
     @Column(name = "MEAN_COTS")
-    public Long getMeanCots() {
+    public Double getMeanCots() {
         return meanCots;
     }
 
-    public void setMeanCots(Long meanCots) {
+    public void setMeanCots(Double meanCots) {
         this.meanCots = meanCots;
     }
 
