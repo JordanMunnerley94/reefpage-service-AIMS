@@ -10,11 +10,13 @@ import javax.persistence.*;
 public class MantaPathBound {
     private String sampleId;
     private String fullreefId;
+    private String gbrmpaReefId;
     private Double north;
     private Double south;
     private Double east;
     private Double west;
 
+//    gbrmpa_reef_id
     @Basic
     @Column(name = "SAMPLE_ID", nullable = true, length = 10)
     public String getSampleId() {
@@ -33,6 +35,16 @@ public class MantaPathBound {
 
     public void setFullreefId(String fullreefId) {
         this.fullreefId = fullreefId;
+    }
+
+    @Basic
+    @Column(name = "GBRMPA_REEF_ID", nullable = true, length = 10)
+    public String getGbrmpaReefId() {
+        return gbrmpaReefId;
+    }
+
+    public void setGbrmpaReefId(String gbrmpaReefId) {
+        this.gbrmpaReefId = gbrmpaReefId;
     }
 
     @Basic
