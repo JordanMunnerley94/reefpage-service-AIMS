@@ -35,13 +35,15 @@ public class ReefpageDao {
     PhotoRepository photoRepository;
     @Autowired
     ReefCommentRepository reefCommentRepository;
+    @Autowired
+    ReefRepository reefRepository;
 
 
 
     public ReefPageEntity getAll(String id) {
         return new ReefPageEntity(getBenthicGroupByDecade(id), getBenthicGroupByYear(id), getFishByDecade(id), getFishByYear(id), getJuvenileCoralByDecade(id),
                 getJuvenileCoralByYear(id), getMantaByDecade(id), getMantaByYear(id), getMantaPathBound(id),
-                getPhoto(id), getReefComment(id));
+                getPhoto(id), getReefComment(id), getReef(id));
     }
 
 //    private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
@@ -95,6 +97,10 @@ public class ReefpageDao {
 
     private ReefComment getReefComment(String id) {
         return reefCommentRepository.findOne(id);
+    }
+
+    private Reef getReef(String id) {
+        return reefRepository.findOne(id);
     }
 
 

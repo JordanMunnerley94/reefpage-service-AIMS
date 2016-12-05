@@ -12,7 +12,7 @@ public class Reef {
     private String fullreefId;
 
     @Basic
-    @Column(name = "REEFNAME", nullable = true, length = 10)
+    @Column(name = "REEF_NAME", nullable = true, length = 10)
     public String getReefName() {
         return reefName;
     }

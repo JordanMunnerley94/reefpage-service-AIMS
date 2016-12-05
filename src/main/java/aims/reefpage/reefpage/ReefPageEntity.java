@@ -27,6 +27,7 @@ public class ReefPageEntity extends ResourceSupport {
     private MantaPathBound mantaPathBound;
     private List<Photo> photo;
     private ReefComment reefComment;
+    private Reef reef;
 
     @JsonCreator
     public ReefPageEntity(@JsonProperty("benthicGroupByDecade") List<BenthicGroupByDecade> benthicGroupByDecade,
@@ -39,7 +40,8 @@ public class ReefPageEntity extends ResourceSupport {
                           @JsonProperty("mantaByYear")List<MantaByYear> mantaByYear,
                           @JsonProperty("mantaPathBound")MantaPathBound mantaPathBound,
                           @JsonProperty("photo")List<Photo> photo,
-                          @JsonProperty("reefComment")ReefComment reefComment)
+                          @JsonProperty("reefComment")ReefComment reefComment,
+                          @JsonProperty("reef")Reef reef)
     {
         this.benthicGroupByDecade = benthicGroupByDecade;
         this.benthicGroupByYear = benthicGroupByYear;
@@ -52,6 +54,7 @@ public class ReefPageEntity extends ResourceSupport {
         this.mantaPathBound = mantaPathBound;
         this.photo = photo;
         this.reefComment = reefComment;
+        this.reef = reef;
     }
 
 //    public String getReefId() {
@@ -150,6 +153,14 @@ public class ReefPageEntity extends ResourceSupport {
         this.reefComment = reefComment;
     }
 
+    public Reef getReef() {
+        return reef;
+    }
+
+    public void setReef(Reef reef) {
+        this.reef = reef;
+    }
+
     @Override
     public String toString() {
         return "ReefPageEntity{" +
@@ -164,6 +175,7 @@ public class ReefPageEntity extends ResourceSupport {
                 ", \nmantaPathBound=" + mantaPathBound +
                 ", \nphoto=" + photo +
                 ", \nreefComment=" + reefComment +
+                ", \nreefDetails=" + reef +
                 '}';
     }
 }
