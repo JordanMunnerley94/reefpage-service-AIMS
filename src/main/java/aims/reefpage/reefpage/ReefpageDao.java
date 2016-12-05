@@ -46,17 +46,9 @@ public class ReefpageDao {
                 getPhoto(id), getReefComment(id), getReef(id));
     }
 
-//    private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
-//        return benthicGroupByYearRepository.findByFullreefId(id);
-//    }
-
     private List<BenthicGroupByYear> getBenthicGroupByYear(String id) {
         return benthicGroupByYearRepository.findByFullreefIdAndGroupCode(id, "HC");
     }
-
-//    private List<BenthicGroupByDecade> getBenthicGroupByDecade(String id) {
-//        return benthicGroupByDecadeRepository.findByFullreefId(id);
-//    }
 
     private List<BenthicGroupByDecade> getBenthicGroupByDecade(String id) {
         return benthicGroupByDecadeRepository.findByFullreefIdAndGroupCode(id, "HC");
@@ -86,7 +78,6 @@ public class ReefpageDao {
         return mantaByDecadeRepository.findByFullreefId(id);
     }
 
-    // Needs reefid - search
     private MantaPathBound getMantaPathBound(String id) {
         return mantaPathBoundRepository.findOne(id);
     }
