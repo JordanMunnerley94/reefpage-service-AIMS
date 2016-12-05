@@ -98,6 +98,7 @@ function loadWMS(map, baseURL, customParams) {
             }
             var urlResult = baseURL + wmsParams.join("&") + "&bbox=" + lUL_Longitude + "," + lUL_Latitude + "," + lLR_Longitude + "," + lLR_Latitude;
             return urlResult;
+            console.log(urlResult)
         },
 
         tileSize: new google.maps.Size(tileHeight, tileWidth),
