@@ -1,6 +1,7 @@
 package aims.reefpage.reefpage;
 
 import aims.reefpage.entity.*;
+import org.springframework.hateoas.ResourceSupport;
 
 import java.util.List;
 
