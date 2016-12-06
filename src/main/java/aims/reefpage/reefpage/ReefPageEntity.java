@@ -15,8 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ReefPageEntity extends ResourceSupport {
 
-//    private String reefId;
-
     private List<BenthicGroupByDecade> benthicGroupByDecade;
     private List<BenthicGroupByYear> benthicGroupByYear;
     private List<FishByDecade> fishByDecade;
@@ -57,14 +55,6 @@ public class ReefPageEntity extends ResourceSupport {
         this.reefComment = reefComment;
         this.reef = reef;
     }
-
-//    public String getReefId() {
-//        return reefId;
-//    }
-//
-//    public void setReefId(String reefId) {
-//        this.reefId = reefId;
-//    }
 
     public List<BenthicGroupByDecade> getBenthicGroupByDecade() {
         return benthicGroupByDecade;
