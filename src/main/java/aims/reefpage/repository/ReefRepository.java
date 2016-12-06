@@ -11,3 +11,10 @@ import java.util.List;
  */
 public interface ReefRepository extends JpaRepository<Reef, String> {
 }
+
+//@Configuration
+//public class RepositoryConfig extends RepositoryRestMvcConfiguration {
+//    @Override
+//    protected void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+//        config.exposeIdsFor(User.class);
+//    }
