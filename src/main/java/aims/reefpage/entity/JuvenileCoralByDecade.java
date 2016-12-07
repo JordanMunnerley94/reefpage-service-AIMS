@@ -79,7 +79,7 @@ public class JuvenileCoralByDecade {
     }
 
     @Basic
-    @Column(name = "MIN_COLONIES")
+    @Column(name = "MIN_COLONIES_PER_TRANSECT")
     public Long getMinColonies() {
         return minColonies;
     }
@@ -89,7 +89,7 @@ public class JuvenileCoralByDecade {
     }
 
     @Basic
-    @Column(name = "MAX_COLONIES")
+    @Column(name = "MAX_COLONIES_PER_TRANSECT")
     public Long getMaxColonies() {
         return maxColonies;
     }
@@ -99,7 +99,7 @@ public class JuvenileCoralByDecade {
     }
 
     @Basic
-    @Column(name = "AVG_COLONIES")
+    @Column(name = "AVG_COLONIES_PER_TRANSECT")
     public Long getAvgColonies() {
         return avgColonies;
     }
@@ -117,6 +117,8 @@ public class JuvenileCoralByDecade {
     public void setYearsSurveyed(Long yearsSurveyed) {
         this.yearsSurveyed = yearsSurveyed;
     }
+
+
 
     @Override
     public boolean equals(Object o) {
