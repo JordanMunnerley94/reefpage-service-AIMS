@@ -13,9 +13,9 @@ public class JuvenileCoralByDecade {
     private String reefName;
     private String aSector;
     private String shelf;
-    private Long minColonies;
-    private Long maxColonies;
-    private Long avgColonies;
+    private Long minColoniesPerTransect;
+    private Long maxColoniesPerTransect;
+    private Long avgColoniesPerTransect;
     private Long yearsSurveyed;
     private String id;
 
@@ -80,32 +80,32 @@ public class JuvenileCoralByDecade {
 
     @Basic
     @Column(name = "MIN_COLONIES_PER_TRANSECT")
-    public Long getMinColonies() {
-        return minColonies;
+    public Long getMinColoniesPerTransect() {
+        return minColoniesPerTransect;
     }
 
-    public void setMinColonies(Long minColonies) {
-        this.minColonies = minColonies;
+    public void setMinColoniesPerTransect(Long minColoniesPerTransect) {
+        this.minColoniesPerTransect = minColoniesPerTransect;
     }
 
     @Basic
     @Column(name = "MAX_COLONIES_PER_TRANSECT")
-    public Long getMaxColonies() {
-        return maxColonies;
+    public Long getMaxColoniesPerTransect() {
+        return maxColoniesPerTransect;
     }
 
-    public void setMaxColonies(Long maxColonies) {
-        this.maxColonies = maxColonies;
+    public void setMaxColoniesPerTransect(Long maxColoniesPerTransect) {
+        this.maxColoniesPerTransect = maxColoniesPerTransect;
     }
 
     @Basic
     @Column(name = "AVG_COLONIES_PER_TRANSECT")
-    public Long getAvgColonies() {
-        return avgColonies;
+    public Long getAvgColoniesPerTransect() {
+        return avgColoniesPerTransect;
     }
 
-    public void setAvgColonies(Long avgColonies) {
-        this.avgColonies = avgColonies;
+    public void setAvgColoniesPerTransect(Long avgColoniesPerTransect) {
+        this.avgColoniesPerTransect = avgColoniesPerTransect;
     }
 
     @Basic
@@ -132,9 +132,9 @@ public class JuvenileCoralByDecade {
         if (reefName != null ? !reefName.equals(that.reefName) : that.reefName != null) return false;
         if (aSector != null ? !aSector.equals(that.aSector) : that.aSector != null) return false;
         if (shelf != null ? !shelf.equals(that.shelf) : that.shelf != null) return false;
-        if (minColonies != null ? !minColonies.equals(that.minColonies) : that.minColonies != null) return false;
-        if (maxColonies != null ? !maxColonies.equals(that.maxColonies) : that.maxColonies != null) return false;
-        if (avgColonies != null ? !avgColonies.equals(that.avgColonies) : that.avgColonies != null) return false;
+        if (minColoniesPerTransect != null ? !minColoniesPerTransect.equals(that.minColoniesPerTransect) : that.minColoniesPerTransect != null) return false;
+        if (maxColoniesPerTransect != null ? !maxColoniesPerTransect.equals(that.maxColoniesPerTransect) : that.maxColoniesPerTransect != null) return false;
+        if (avgColoniesPerTransect != null ? !avgColoniesPerTransect.equals(that.avgColoniesPerTransect) : that.avgColoniesPerTransect != null) return false;
         if (yearsSurveyed != null ? !yearsSurveyed.equals(that.yearsSurveyed) : that.yearsSurveyed != null)
             return false;
 
@@ -148,9 +148,9 @@ public class JuvenileCoralByDecade {
         result = 31 * result + (reefName != null ? reefName.hashCode() : 0);
         result = 31 * result + (aSector != null ? aSector.hashCode() : 0);
         result = 31 * result + (shelf != null ? shelf.hashCode() : 0);
-        result = 31 * result + (minColonies != null ? minColonies.hashCode() : 0);
-        result = 31 * result + (maxColonies != null ? maxColonies.hashCode() : 0);
-        result = 31 * result + (avgColonies != null ? avgColonies.hashCode() : 0);
+        result = 31 * result + (minColoniesPerTransect != null ? minColoniesPerTransect.hashCode() : 0);
+        result = 31 * result + (maxColoniesPerTransect != null ? maxColoniesPerTransect.hashCode() : 0);
+        result = 31 * result + (avgColoniesPerTransect != null ? avgColoniesPerTransect.hashCode() : 0);
         result = 31 * result + (yearsSurveyed != null ? yearsSurveyed.hashCode() : 0);
         return result;
     }
