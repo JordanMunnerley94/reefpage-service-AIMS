@@ -12,6 +12,7 @@ public class Reef {
     private String fullreefId;
     private Double reef_lat;
     private Double reef_long;
+    private String aerialPhoto;
 
     @Basic
     @Column(name = "REEF_NAME", nullable = true, length = 10)
@@ -53,6 +54,16 @@ public class Reef {
         this.reef_long = reef_long;
     }
 
+    @Basic
+    @Column(name = "AERIAL_PHOTO", nullable = true, length = 10)
+    public String getAerialPhoto() {
+        return aerialPhoto;
+    }
+
+    public void setAerialPhoto(String aerialPhoto) {
+        this.aerialPhoto = aerialPhoto;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -64,6 +75,7 @@ public class Reef {
         if (fullreefId != null ? !fullreefId.equals(that.fullreefId) : that.fullreefId != null) return false;
         if (reef_lat != null ? !reef_lat.equals(that.reef_lat) : that.reef_lat != null) return false;
         if (reef_long != null ? !reef_long.equals(that.reef_long) : that.reef_long != null) return false;
+        if (aerialPhoto != null ? !aerialPhoto.equals(that.aerialPhoto) : that.aerialPhoto != null) return false;
 
         return true;
     }
@@ -74,6 +86,7 @@ public class Reef {
         result = 31 * result + (fullreefId != null ? fullreefId.hashCode() : 0);
         result = 31 * result + (reef_lat != null ? reef_lat.hashCode() : 0);
         result = 31 * result + (reef_long != null ? reef_long.hashCode() : 0);
+        result = 31 * result + (aerialPhoto != null ? aerialPhoto.hashCode() : 0);
         return result;
     }
 }
